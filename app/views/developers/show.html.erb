@@ -2,12 +2,12 @@
 
 <p>
   <strong>Email:</strong>
-  <%= @developer.email_id %>
+  <%= @developer.email %>
 </p>
 
 <p>
   <strong>Password:</strong>
-  <%= @developer.password_id %>
+  <%= @developer.password %>
 </p>
 
 <p>
@@ -15,5 +15,4 @@
   <%= @name.name %>
 </p>
 
-<%= link_to 'Edit', edit_developer_path(@developer) %> |
-<%= link_to 'Back', developer_path %>
+<%= link_to 'Edit', edit_developer_path(@developer) %>
