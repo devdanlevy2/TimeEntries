@@ -4,25 +4,15 @@ Rails.application.routes.draw do
 
   get 'developers/edit'
 
-  get 'developers/update'
-
-  get 'developers/list'
-
-  get 'developers/delete'
-
-  get 'developers/create'
+  post 'developers/create'
 
   get 'time_entries/show'
 
   get 'time_entries/edit'
 
-  get 'time_entries/update'
+  delete 'time_entries/destroy'
 
-  get 'time_entries/list'
-
-  get 'time_entries/delete'
-
-  get 'time_entries/create'
+  post 'time_entries/create'
 
   get 'projects/index'
 
@@ -30,11 +20,11 @@ Rails.application.routes.draw do
 
   get 'projects/edit'
 
-  get 'projects/update'
+  patch/put 'projects/update'
 
   get 'projects/list'
 
-  get 'projects/delete'
+  delete 'projects/destroy'
 
     root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
