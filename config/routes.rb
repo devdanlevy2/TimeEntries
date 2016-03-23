@@ -1,32 +1,9 @@
 Rails.application.routes.draw do
+  resources :developers
+  resources :time_entries
+  resources :projects
 
-  get 'developers/show'
-
-  get 'developers/edit'
-
-  post 'developers/create'
-
-  get 'time_entries/show'
-
-  get 'time_entries/edit'
-
-  delete 'time_entries/destroy'
-
-  post 'time_entries/create'
-
-  get 'projects/index'
-
-  get 'projects/show'
-
-  get 'projects/edit'
-
-  patch 'projects/update'
-
-  get 'projects/list'
-
-  delete 'projects/destroy'
-
-    root 'welcome#index'
+  root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

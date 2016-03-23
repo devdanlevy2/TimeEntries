@@ -1,2 +1,19 @@
-<h1>Developers#show</h1>
-<p>Find me in app/views/developers/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @developer.email_id %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @developer.password_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @name.name %>
+</p>
+
+<%= link_to 'Edit', edit_developer_path(@developer) %> |
+<%= link_to 'Back', developer_path %>
