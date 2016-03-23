@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   get 'projects/edit'
 
-  patch/put 'projects/update'
+  patch 'projects/update'
 
   get 'projects/list'
 
