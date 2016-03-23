@@ -11,6 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160323001320) do
+
+  create_table "developers", force: :cascade do |t|
+    t.string   "email"
+    t.string   "password"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "max_hours"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "time_entries", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "developer_id"
+    t.integer  "duration"
+    t.date     "date"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "time_entries", ["developer_id"], name: "index_time_entries_on_developer_id"
+  add_index "time_entries", ["project_id"], name: "index_time_entries_on_project_id"
 
 end
