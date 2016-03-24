@@ -1,18 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @developer.email %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @developer.password %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @name.name %>
-</p>
+<p> <%= @developer.name %> </p>
+<p>  <%= @developer.email %> </p>
 
 <%= link_to 'Edit', edit_developer_path(@developer) %>

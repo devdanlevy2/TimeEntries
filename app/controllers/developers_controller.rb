@@ -1,5 +1,5 @@
 class DevelopersController < ApplicationController
-  before_action :set_developer, only: [:show, :edit, :update, :destroy]
+  before_action :set_developer, only: [:show, :edit, :destroy, :update]
 
   def index
     @developers = Developer.all
@@ -14,15 +14,12 @@ class DevelopersController < ApplicationController
 
   def edit
   end
-
+  
   def create
     @developer = Developer.new(developer_params)
-    if !session[:user_id].nil?
-      flash[:notice] = "Please logout of current session before creating a new account."
-      redirect_to root_path
-    elsif @developer.save
-      session[:user_id] = @developer.id
-      redirect_to new_survey_path, notice: 'Account was successfully created.'
+
+    if @developer.save
+      redirect_to @developer, notice: 'Developer was successfully created.'
     else
       render :new
     end
@@ -46,12 +43,12 @@ class DevelopersController < ApplicationController
   end
 
   private
-    def set_author
+    def set_developer
       @developer = Developer.find(params[:id])
     end
 
     def developer_params
-      params.require(:developer).permit(:name, :email, :password, :password_confirmation)
+      params.require(:developer).permit(:developer_id, :name, :email, :password)
     end
 
 end
