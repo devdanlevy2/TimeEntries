@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323001320) do
+ActiveRecord::Schema.define(version: 20160324140303) do
 
   create_table "developers", force: :cascade do |t|
     t.string   "email"
@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 20160323001320) do
     t.integer  "project_id"
     t.integer  "developer_id"
     t.integer  "duration"
-    t.date     "date"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.date     "date_on"
   end
 
   add_index "time_entries", ["developer_id"], name: "index_time_entries_on_developer_id"

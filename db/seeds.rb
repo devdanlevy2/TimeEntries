@@ -6,5 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Developer.create!(name: "DevDanLevy", email: "danlevy@danlevy.com", password: "monkey")
-TimeEntry.create!(project_id: 1, developer_id: 1, duration: 2, date: 2016-03-04 )
+TimeEntry.create!(project_id: 1, developer_id: 1, duration: 2, date_on: 2016-03-04 )
 Project.create!(name: "DeCode DaVinci", max_hours: 2000)

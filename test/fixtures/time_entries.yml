@@ -4,10 +4,10 @@ one:
   project_id: 1
   developer_id: 1
   duration: 1
-  date: 2016-03-22
+  date_on: 2016-03-22
 
 two:
   project_id: 1
   developer_id: 1
   duration: 1
-  date: 2016-03-22
+  date_on: 2016-03-22
