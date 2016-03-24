@@ -1,0 +1,23 @@
+<%= form_for(@time_entry) do |f| %>
+
+  <div class="field">
+    <%= f.label :project_id, "Project Id" %><br>
+    <%= f.number_field :project_id %>
+  </div>
+  <div class="field">
+    <%= f.label :developer_id, "Developer Id" %><br>
+    <%= f.collection_select(:developer_id, Developer.all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :duration, "Hours"%><br>
+    <%= f.number_field :duration %>
+  </div>
+  <div class="field">
+    <%= f.label :date, "Date"%><br>
+    <%= f.date_field :date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
