@@ -28,7 +28,7 @@ class TimeEntriesController < ApplicationController
 
 
   def update
-      if @time_entry.update(TimeEntry_params)
+      if @time_entry.update(time_entry_params)
         redirect_to @time_entry, notice: 'TimeEntry was successfully updated.'
       else
         render :edit
@@ -38,13 +38,13 @@ class TimeEntriesController < ApplicationController
   def destroy
     @time_entry.destroy
 
-      redirect_to TimeEntries_url, notice: 'TimeEntry was successfully destroyed.'
+      redirect_to time_entries_url, notice: 'TimeEntry was successfully destroyed.'
 
   end
 
   private
     def set_time_entry
-      @time_entry = TimeEntry.find(params[:id])
+      @time_entry = time_entry.find(params[:id])
     end
 
     def time_entry_params
