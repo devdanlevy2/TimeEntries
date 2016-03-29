@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   resources :time_entries
   resources :projects
 
-  root 'dashboard#index'
-  # The priority is based upon order of creation: first created -> highest priority.
+  root 'dashboard#show'
+
+  get 'login' => 'authentications#new'
+  post 'login' => 'authentications#create'
+  delete 'logout' => 'authentications#destroy'
+ 
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

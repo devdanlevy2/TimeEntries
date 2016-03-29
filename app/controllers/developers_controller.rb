@@ -1,6 +1,7 @@
 class DevelopersController < ApplicationController
   before_action :set_developer, only: [:show, :edit, :destroy, :update]
-
+  before_action :authenticate_user
+  
   def index
     @developers = Developer.all
   end
@@ -14,7 +15,7 @@ class DevelopersController < ApplicationController
 
   def edit
   end
-  
+
   def create
     @developer = Developer.new(developer_params)
 
@@ -48,7 +49,7 @@ class DevelopersController < ApplicationController
     end
 
     def developer_params
-      params.require(:developer).permit(:developer_id, :name, :email, :password)
+      params.require(:developer).permit(:developer_id, :name, :email, :password, :date_on)
     end
 
 end
