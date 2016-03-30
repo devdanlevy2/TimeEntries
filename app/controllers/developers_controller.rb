@@ -3,7 +3,7 @@ class DevelopersController < ApplicationController
   before_action :authenticate, except: [:new, :create]
 
   def index
-    @developer = Developer.all
+    @developers = Developer.all
   end
 
   def show
@@ -18,12 +18,8 @@ class DevelopersController < ApplicationController
 
   def create
     @developer = Developer.new(developer_params)
-    if !session[:user_id].nil?
-      flash[:notice] = "Please logout of current session before creating a new account."
-      redirect_to root_path
-    elsif @developer.save
-      session[:user_id] = @developer.id
-      redirect_to developer_path, notice: 'Account was successfully created.'
+    if @developer.save
+      redirect_to @developer, notice: 'Developer was successfully created.'
     else
       render :new
     end
@@ -47,7 +43,7 @@ class DevelopersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_developer
-      @developer = Developer.find(params[:id])
+      @developer = Developer.find(session[:user_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

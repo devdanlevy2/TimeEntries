@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    developer = Developer.find_by_email(email: params[:email])
+    developer = Developer.find_by_email(params[:email])
 
     if developer && developer.authenticate(params[:password])
       session[:user_id] = developer.id
