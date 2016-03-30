@@ -1,6 +1,9 @@
 class DashboardController < ApplicationController
 
-  def show
-    redirect_to login_path
+  def index
   end
+
+  def show
+  end
+  
 end

@@ -7,6 +7,8 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,6 +17,8 @@
     <% @developers.each do |developer| %>
       <tr>
         <td><%= developer.name %></td>
+        <td><%= developer.email %></td>
+        <td><%= developer.password %></td>
         <td><%= link_to 'Show', developer %></td>
         <td><%= link_to 'Edit', edit_developer_path(developer) %></td>
         <td><%= link_to 'Destroy', developer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

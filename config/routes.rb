@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   resources :time_entries
   resources :projects
 
-  root 'dashboard#show'
+  root 'dashboard#index'
 
-  get 'login' => 'authentications#new'
-  post 'login' => 'authentications#create'
-  delete 'logout' => 'authentications#destroy'
- 
+  get 'login' => 'sessions#new'
+  get 'show' => 'sessions#show'
+  post 'create' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

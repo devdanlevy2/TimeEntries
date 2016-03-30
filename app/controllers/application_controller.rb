@@ -3,10 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-
-  private def authenticate_user
-    if developer[:user_id].nil?
-      redirect_to root_path, notice: "No really, you need to log in."
-    end
+  private def authenticate
+    redirect_to login_path, notice: "You must log in to access this page" unless session[:user_id]
   end
 end
