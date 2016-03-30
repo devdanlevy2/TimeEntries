@@ -22,7 +22,7 @@ class DevelopersController < ApplicationController
       redirect_to root_path
     elsif @developer.save
       session[:user_id] = @developer.id
-      redirect_to show_developer_path, notice: 'Account was successfully created.'
+      redirect_to developer_path, notice: 'Account was successfully created.'
     else
       render :new
     end
@@ -39,7 +39,7 @@ class DevelopersController < ApplicationController
   def destroy
     @developer.destroy
 
-      redirect_to developers_url, notice: 'Author was successfully destroyed.'
+      redirect_to developers_url, notice: 'Developer was successfully destroyed.'
 
   end
 
@@ -51,7 +51,7 @@ class DevelopersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def developer_params
-      params.require(:developer).permit(:name, :email, :password)
+      params.require(:developer).permit(:email, :name, :password)
     end
 
 end
